@@ -1,0 +1,41 @@
+<br><br><br><br><br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-2">
+            <h2>Namespaces</h2>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary" routerLink="/namespace">Adicionar Namespace</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Criação</th>
+                <th scope="col">Rótulos</th>
+                <th scope="col">Anotações</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let namespace of namespaces">
+                <td>{{ namespace.metadata.name }}</td>
+                <td>{{ namespace.metadata.creationTimestamp }}</td>
+                <td>{{ getLabelValue(namespace) }}</td>
+                <td>{{ getAnnotationValue(namespace) }}</td>
+                <td>
+                    <div class="d-flex justify-content-middle">
+                        <button class="btn btn-xs btn-light" (click)="deleteNamespace(namespace)"><i
+                                class="bi bi-xs bi-trash"></i></button>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

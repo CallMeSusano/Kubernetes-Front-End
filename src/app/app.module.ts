@@ -7,10 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NamespacesComponent } from './namespaces/namespaces.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/routerList', pathMatch: 'full'},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'namespaces', component: NamespacesComponent}
 
   
 ];
@@ -18,6 +22,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
+    NamespacesComponent,
   ],
   imports: [
     BrowserModule,
