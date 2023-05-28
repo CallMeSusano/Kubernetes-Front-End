@@ -1,0 +1,36 @@
+<br><br><br><br><br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-2">
+            <h2>Namespaces</h2>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary" routerLink="/namespace">Adicionar Namespace</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-bordered">
+        <thead><tr>
+        <th>Nome</th>
+        <th>Namespace</th>
+        <th>Ações</th>
+      </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pod of pods">
+                <td>{{ pod.name }}</td>
+                <td>{{ pod.namespace }}</td>
+                <td>
+                    <div class="d-flex justify-content-middle">
+                        <button class="btn btn-xs btn-light" (click)="deletePod(pod.name)"><i
+                                class="bi bi-xs bi-trash"></i></button>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

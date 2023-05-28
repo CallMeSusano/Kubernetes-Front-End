@@ -1,0 +1,12 @@
+<br><br>
+<div class="container">
+    <h1>Adicionar Namespace</h1>
+    <form (ngSubmit)="createNamespace()">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" routerLink="/namespaces">Adicionar</button>
+    </form>
+  </div>

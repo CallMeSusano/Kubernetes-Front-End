@@ -9,12 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NamespacesComponent } from './namespaces/namespaces.component';
+import { NamespaceComponent } from './namespace/namespace.component';
+import { PodsComponent } from './pods/pods.component';
+import { PodComponent } from './pod/pod.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'namespaces', component: NamespacesComponent}
+  {path: 'namespaces', component: NamespacesComponent},
+  {path: 'namespace', component: NamespaceComponent},
+  {path: 'pods', component: PodsComponent},
+  {path: 'pod', component: PodComponent}
 
   
 ];
@@ -24,6 +30,9 @@ const routes: Routes = [
     AppComponent,
     DashboardComponent,
     NamespacesComponent,
+    NamespaceComponent,
+    PodsComponent,
+    PodComponent,
   ],
   imports: [
     BrowserModule,
