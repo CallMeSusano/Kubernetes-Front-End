@@ -1,0 +1,24 @@
+<br><br><br><br><br>
+<div class="container">
+    <h1>Criar Deployment</h1>
+    <form (ngSubmit)="createDeployment()">
+      <div class="form-group">
+        <label for="name">Deployment Name:</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="deploymentName">
+      </div>
+      <div class="form-group">
+        <label for="replicas">Replicas:</label>
+        <input type="number" class="form-control" id="replicas" name="replicas" [(ngModel)]="deploymentReplicas">
+      </div>
+      <div class="form-group">
+        <label for="image">Container Image:</label>
+        <input type="text" class="form-control" id="image" name="image" [(ngModel)]="containerImage">
+      </div>
+      <div class="form-group">
+        <label for="port">Container Port:</label>
+        <input type="number" class="form-control" id="port" name="port" [(ngModel)]="containerPort">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Create Deployment</button>
+    </form>
+  </div>

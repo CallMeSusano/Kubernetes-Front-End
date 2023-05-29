@@ -33,7 +33,7 @@ export class NamespaceComponent implements OnInit {
     // Set the request headers
   
     // Send the request
-    this.http.post('/api/namespaces', requestBody)
+    this.http.post('api/v1/namespaces', requestBody)
       .subscribe(
         (response) => {
           console.log('Namespace created:', response);

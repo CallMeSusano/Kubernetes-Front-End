@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <h2>Services</h2>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary" routerLink="/service">Add Service</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let service of services">
+                <td>{{ service.metadata.name }}</td>
+                <td>{{ service.metadata.namespace }}</td>
+                <td>{{ service.spec.type }}</td>
+                <td>
+                    <div class="d-flex justify-content-middle">
+                        <button class="btn btn-xs btn-light" (click)="deleteService(service.metadata.name)">
+                            <i class="bi bi-xs bi-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
