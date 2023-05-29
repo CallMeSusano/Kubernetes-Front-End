@@ -1,0 +1,38 @@
+
+<br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <h2>Deployments</h2>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary" routerLink="/deployment">Add Deployment</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let deployment of deployments">
+                <td>{{ deployment.metadata.name }}</td>
+                <td>{{ deployment.metadata.namespace }}</td>
+                <td>{{ deployment.spec.template.spec.containers[0].image }}</td>
+                <td>
+                    <div class="d-flex justify-content-middle">
+                        <button class="btn btn-xs btn-light" (click)="deleteDeployment(deployment.metadata.name)">
+                            <i class="bi bi-xs bi-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

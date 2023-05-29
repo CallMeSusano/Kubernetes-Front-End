@@ -1,16 +1,16 @@
 <br><br>
 <div class="container">
-    <h1>Adicionar Namespace</h1>
+    <h1>Adicionar Pod</h1>
     <form (ngSubmit)="createPod()">
       <div class="form-group">
         <label for="name">Nome:</label>
         <input type="text" class="form-control" id="name" name="name" [(ngModel)]="podName">
       </div>
-      <label for="namespace">Namespace:</label>
-    <select [(ngModel)]="podNamespace">
-      <option *ngFor="let namespace of namespaces" [value]="namespace">{{ namespace }}</option>
-    </select>
+      <div class="form-group">
+        <label for="name">Imagem:</label>
+        <input type="text" class="form-control" id="image" name="name" [(ngModel)]="podImage">
+      </div>
       <br>
-      <button type="submit" class="btn btn-primary" routerLink="/namespaces">Adicionar</button>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
     </form>
   </div>

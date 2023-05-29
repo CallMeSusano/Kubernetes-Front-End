@@ -15,15 +15,19 @@ export class PodsComponent implements OnInit {
     this.fetchPods();
   }
 
-  fetchPods() {
-    this.http.get<any[]>('api/pods')
-      .subscribe(pods => {
-        this.pods = pods;
+  fetchPods(): void {
+    
+
+    // Fazer o pedido HTTP GET para a API do Kubernetes para obter os namespaces
+    this.http.get<any>('/api/v1/pods')
+      .subscribe(response => {
+        // Salvar os namespaces no array namespaces
+        this.pods = response.items;
       });
   }
 
   deletePod(podName: string) {
-    this.http.delete(`api/pods/${podName}`)
+    this.http.delete(`api/v1/pods/${podName}`)
       .subscribe(() => {
         this.fetchPods();
       });

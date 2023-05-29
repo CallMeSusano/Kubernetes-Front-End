@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface Pod{
+interface Pod {
   metadata: Metadata;
+  spec: Spec;
+}
+
+interface Spec {
+  containers: Container[];
+}
+
+interface Container {
+  name: string;
+  image: string;
 }
 
 interface Metadata {
   name: string;
-  namespaces: string[];
 }
-
 
 @Component({
   selector: 'app-pod',
@@ -19,32 +27,35 @@ interface Metadata {
 export class PodComponent implements OnInit {
   podName: string = '';
   podNamespace: string = '';
-  namespaces: string[] = [];
+  podImage: string = '';
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    this.fetchNamespaces();
-  }
-
-  fetchNamespaces() {
-    this.http.get<any[]>('api/namespaces')
-      .subscribe(namespaces => {
-        this.namespaces = namespaces;
-      });
-  }
+  ngOnInit():void {}
 
   createPod() {
-    const requestBody : Pod = {
+    console.log('Pod created:');
+    const requestBody: Pod = {
       metadata: {
-        name: this.podName,
-        namespaces: this.namespaces,
+        name: this.podName
       },
+      spec: {
+        containers: [
+          {
+            name: this.podImage,
+            image: this.podImage
+          }
+        ]
+      }
     };
-
-    this.http.post('api/pods', requestBody)
-      .subscribe(() => {
-        // Pod created successfully
-      });
+    this.http.post('api/v1/namespaces/default/pods', requestBody)
+      .subscribe(
+        (response) => {
+          console.log('Pod created:', response);
+        },
+        (error) => {
+          console.error('Error creating pod:', error);
+        }
+      );
   }
 }

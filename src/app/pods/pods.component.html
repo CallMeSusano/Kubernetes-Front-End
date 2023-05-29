@@ -3,10 +3,10 @@
     <div class="row">
 
         <div class="col-md-2">
-            <h2>Namespaces</h2>
+            <h2>Pods</h2>
         </div>
         <div class="col-md-6">
-            <a class="btn btn-primary" routerLink="/namespace">Adicionar Namespace</a>
+            <a class="btn btn-primary" routerLink="/pod">Adicionar Pods</a>
         </div>
     </div>
 
@@ -20,8 +20,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let pod of pods">
-                <td>{{ pod.name }}</td>
-                <td>{{ pod.namespace }}</td>
+                <td>{{ pod.metadata.name }}</td>
+                <td>{{ pod.metadata.namespace }}</td>
                 <td>
                     <div class="d-flex justify-content-middle">
                         <button class="btn btn-xs btn-light" (click)="deletePod(pod.name)"><i

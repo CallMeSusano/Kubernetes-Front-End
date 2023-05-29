@@ -1,10 +1,7 @@
 {
-    "/api": {
-      "target": "http://192.168.2.111:8001",
-      "secure": false,
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": "/api/v1"
-      }
-    }
+  "/api": {
+    "target": "http://192.168.2.111:8001",
+    "secure": false,
+    "changeOrigin": true
   }
+}

@@ -23,7 +23,7 @@ export class NamespacesComponent implements OnInit {
     
 
     // Fazer o pedido HTTP GET para a API do Kubernetes para obter os namespaces
-    this.http.get<any>('/api/namespaces')
+    this.http.get<any>('api/v1/namespaces')
       .subscribe(response => {
         // Salvar os namespaces no array namespaces
         this.namespaces = response.items;
@@ -39,7 +39,7 @@ export class NamespacesComponent implements OnInit {
     return annotations ? annotations['kubernetes.io/metadata.name'] || '' : '';
   }
   deleteNamespace(namespace: any){
-    this.http.delete<any>(`/api/namespaces/${namespace.metadata.name}`).subscribe(data => {
+    this.http.delete<any>(`api/v1/namespaces/${namespace.metadata.name}`).subscribe(data => {
       this.namespaces = data;
       console.log(data)
     })

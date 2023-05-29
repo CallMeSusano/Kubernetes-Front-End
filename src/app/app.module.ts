@@ -12,6 +12,10 @@ import { NamespacesComponent } from './namespaces/namespaces.component';
 import { NamespaceComponent } from './namespace/namespace.component';
 import { PodsComponent } from './pods/pods.component';
 import { PodComponent } from './pod/pod.component';
+import { DeploymentsComponent } from './deployments/deployments.component';
+import { DeploymentComponent } from './deployment/deployment.component';
+import { ServicesComponent } from './services/services.component';
+import { ServiceComponent } from './service/service.component';
 
 
 const routes: Routes = [
@@ -20,7 +24,11 @@ const routes: Routes = [
   {path: 'namespaces', component: NamespacesComponent},
   {path: 'namespace', component: NamespaceComponent},
   {path: 'pods', component: PodsComponent},
-  {path: 'pod', component: PodComponent}
+  {path: 'pod', component: PodComponent},
+  {path: 'deployments', component: DeploymentsComponent},
+  {path: 'deployment', component: DeploymentComponent},
+  {path: 'services', component: ServicesComponent},
+  {path: 'service', component: ServiceComponent}
 
   
 ];
@@ -33,6 +41,10 @@ const routes: Routes = [
     NamespaceComponent,
     PodsComponent,
     PodComponent,
+    DeploymentsComponent,
+    DeploymentComponent,
+    ServicesComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
