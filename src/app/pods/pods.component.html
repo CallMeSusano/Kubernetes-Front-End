@@ -1,8 +1,8 @@
-<br><br><br><br><br>
+
 <div class="container">
     <div class="row">
 
-        <div class="col-md-2">
+        <div class="col-md-3">
             <h2>Pods</h2>
         </div>
         <div class="col-md-6">
@@ -24,7 +24,7 @@
                 <td>{{ pod.metadata.namespace }}</td>
                 <td>
                     <div class="d-flex justify-content-middle">
-                        <button class="btn btn-xs btn-light" (click)="deletePod(pod.name)"><i
+                        <button class="btn btn-xs btn-light" (click)="deletePod(pod.metadata.name)"><i
                                 class="bi bi-xs bi-trash"></i></button>
                     </div>
                 </td>

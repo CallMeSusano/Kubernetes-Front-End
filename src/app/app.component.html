@@ -1,22 +1,46 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Projeto LTI</a></nav>
-<router-outlet></router-outlet>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Projeto LTI</a>
+</nav>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
+<br><br><br>
+<div class="container" >
+  <div class="row" >
+    <nav class="col-md-1 d-none d-md-block bg-light sidebar" style="height: 100%; position: fixed; top: 0; left: 0; overflow-y: auto; border-right: 1px solid #ddd;">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li>
+            <br><br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/namespaces">
+              Namespaces
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/pods">
+              Pods
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/deployments">
+              Deployments
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/services">
+              Services
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+    
+  </div>

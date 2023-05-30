@@ -2,18 +2,18 @@
     <h1>Create Service</h1>
     <form (ngSubmit)="createService()">
       <div class="form-group">
-        <label for="name">Service Name:</label>
+        <label for="name">Nome do Service:</label>
         <input type="text" class="form-control" id="name" name="name" [(ngModel)]="serviceName">
       </div>
       <div class="form-group">
-        <label for="port">Service Port:</label>
+        <label for="port">Porta do Service:</label>
         <input type="number" class="form-control" id="port" name="port" [(ngModel)]="servicePort">
       </div>
       <div class="form-group">
-        <label for="targetPort">Target Port:</label>
+        <label for="targetPort">Porta Target:</label>
         <input type="number" class="form-control" id="targetPort" name="targetPort" [(ngModel)]="targetPort">
       </div>
       <br>
-      <button type="submit" class="btn btn-primary">Create Service</button>
+      <button type="submit" class="btn btn-primary">Adicionar Service</button>
     </form>
   </div>

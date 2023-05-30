@@ -27,7 +27,7 @@ export class PodsComponent implements OnInit {
   }
 
   deletePod(podName: string) {
-    this.http.delete(`api/v1/pods/${podName}`)
+    this.http.delete(`/api/v1/namespaces/default/pods/${podName}`)
       .subscribe(() => {
         this.fetchPods();
       });
