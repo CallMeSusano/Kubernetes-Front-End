@@ -47,6 +47,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNodes();
+    this.getNamespaces();
+    this.getDeployments();
+    this.getPods();
+    this.getServices();
   }
 
   updateApiAddress(): void {
