@@ -1,17 +1,63 @@
-<br>
-<br>
-
 <div class="container">
-<div class="card">
-  <div class="card-header bg-light">
-    <h3>Nodes</h3>
-  </div>
-  <div class="card-body">
-    <p>Total: {{ nodes.length }}</p>
-    <ul class="list-group">
-      <li *ngFor="let node of nodes" class="list-group-item">
-        {{ node.metadata.name }}
-      </li>
-    </ul>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h3>Nodes</h3>
+        </div>
+        <div class="card-body">
+          <p>Total: {{ nodes.length }}</p>
+          <ul class="list-group">
+            <li *ngFor="let node of nodes" class="list-group-item">
+              {{ node.metadata.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h3>Namespaces</h3>
+        </div>
+        <div class="card-body">
+          <p>Total: {{ namespaces.length }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h3>Pods</h3>
+        </div>
+        <div class="card-body">
+          <p>Total: {{ pods.length }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h3>Deployments</h3>
+        </div>
+        <div class="card-body">
+          <p>Total: {{ deployments.length }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h3>Services</h3>
+        </div>
+        <div class="card-body">
+          <p>Total: {{ services.length }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

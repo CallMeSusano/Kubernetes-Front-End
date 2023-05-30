@@ -47,6 +47,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNodes();
+    this.getNamespaces();
+    this.getDeployments();
+    this.getPods();
+    this.getServices();
   }
 
   updateApiAddress(): void {
@@ -55,9 +59,39 @@ export class DashboardComponent implements OnInit {
   }
 
   getNodes(): void {
-    this.http.get<any>('/api/nodes')
+    this.http.get<any>('/api/v1/nodes')
       .subscribe(response => {
         this.nodes = response.items;
+        console.log(this.nodes);
+      });
+  }
+  getNamespaces(): void {
+    this.http.get<any>('/api/v1/namespaces')
+      .subscribe(response => {
+        this.namespaces = response.items;
+        console.log(this.nodes);
+      });
+  }
+  getPods(): void {
+    this.http.get<any>('/api/v1/pods')
+      .subscribe(response => {
+        this.pods = response.items;
+        console.log(this.nodes);
+      });
+  }
+  
+  getDeployments(): void {
+    this.http.get<any>('/apis/apps/v1/namespaces/default/deployments')
+      .subscribe(response => {
+        this.deployments = response.items;
+        console.log(this.nodes);
+      });
+  }
+  
+  getServices(): void {
+    this.http.get<any>('/api/v1/namespaces/default/services')
+      .subscribe(response => {
+        this.services = response.items;
         console.log(this.nodes);
       });
   }

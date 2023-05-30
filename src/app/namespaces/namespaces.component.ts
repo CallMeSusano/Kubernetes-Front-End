@@ -44,5 +44,4 @@ export class NamespacesComponent implements OnInit {
       console.log(data)
     })
   }
-  // ... Rest of the component code
 }

@@ -1,8 +1,8 @@
-<br><br><br><br><br>
+
 <div class="container">
     <div class="row">
 
-        <div class="col-md-2">
+        <div class="col-md-3">
             <h2>Namespaces</h2>
         </div>
         <div class="col-md-6">
@@ -17,7 +17,6 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Criação</th>
                 <th scope="col">Rótulos</th>
-                <th scope="col">Anotações</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
@@ -26,7 +25,6 @@
                 <td>{{ namespace.metadata.name }}</td>
                 <td>{{ namespace.metadata.creationTimestamp }}</td>
                 <td>{{ getLabelValue(namespace) }}</td>
-                <td>{{ getAnnotationValue(namespace) }}</td>
                 <td>
                     <div class="d-flex justify-content-middle">
                         <button class="btn btn-xs btn-light" (click)="deleteNamespace(namespace)"><i
